@@ -4,8 +4,10 @@
  * @type {import('@nrwl/devkit').ModuleFederationConfig}
  **/
 const moduleFederationConfig = {
-  name: 'web',
-  remotes: ['me', 'sidebar']
+  name: 'sidebar',
+  exposes: {
+    './Module': 'apps/sidebar/src/remote-entry.ts'
+  }
 }
 
 module.exports = moduleFederationConfig

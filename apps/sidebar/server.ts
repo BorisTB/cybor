@@ -4,11 +4,11 @@ import cors from 'cors'
 
 import { handleRequest } from './src/main.server'
 
-const port = process.env['PORT'] || 4201
+const port = process.env['PORT'] || 4202
 const app = express()
 
-const browserDist = path.join(process.cwd(), 'dist/apps/me/browser')
-const serverDist = path.join(process.cwd(), 'dist/apps/me/server')
+const browserDist = path.join(process.cwd(), 'dist/apps/sidebar/browser')
+const serverDist = path.join(process.cwd(), 'dist/apps/sidebar/server')
 const indexPath = path.join(browserDist, 'index.html')
 
 app.use(cors())

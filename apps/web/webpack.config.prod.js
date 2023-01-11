@@ -1,7 +1,7 @@
 // @ts-check
 
-const { withModuleFederation } = require('@nrwl/react/module-federation');
-const baseConfig = require('./module-federation.config');
+const { withModuleFederation } = require('@nrwl/react/module-federation')
+const baseConfig = require('./module-federation.config')
 
 /**
  * @type {import('@nrwl/devkit').ModuleFederationConfig}
@@ -25,7 +25,10 @@ const prodConfig = {
    *   ['app2', 'http://example.com/path/to/app2/remoteEntry.js'],
    * ]
    */
-  remotes: [['me', 'http://localhost:4201/']],
-};
+  remotes: [
+    ['me', 'http://localhost:4201/'],
+    ['sidebar', 'http://localhost:4202/']
+  ]
+}
 
-module.exports = withModuleFederation(prodConfig);
+module.exports = withModuleFederation(prodConfig)

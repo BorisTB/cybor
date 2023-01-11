@@ -5,7 +5,7 @@
  **/
 const moduleFederationConfig = {
   name: 'web',
-  remotes: ['me'],
-};
+  remotes: ['me', 'sidebar']
+}
 
-module.exports = moduleFederationConfig;
+module.exports = moduleFederationConfig

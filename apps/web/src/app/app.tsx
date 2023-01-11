@@ -1,22 +1,26 @@
 import * as React from 'react'
 import NxWelcome from './nx-welcome'
 import { Link, Route, Routes } from 'react-router-dom'
-import { List, ListItem } from '@brs/shared/ui'
+import styled from '@emotion/styled'
 
 const Me = React.lazy(() => import('me/Module'))
+const Sidebar = React.lazy(() => import('sidebar/Module'))
+
+const Foo = styled('div')({
+  background: 'teal',
+  width: '300px',
+  height: '100px',
+  color: 'white'
+})
 
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <List>
-        <ListItem>
-          <Link to="/">Home</Link>
-        </ListItem>
-        <ListItem>
-          <Link to="/me">Me</Link>
-        </ListItem>
-      </List>
+      <Sidebar />
       <ul>
+        <li>
+          <Foo>TEST TEST</Foo>
+        </li>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -27,7 +31,6 @@ export function App() {
       </ul>
       <Routes>
         <Route path="/" element={<NxWelcome title="web" />} />
-
         <Route path="/me" element={<Me />} />
       </Routes>
     </React.Suspense>
